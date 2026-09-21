@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Lido Technologies</title>
 <meta name="description" content="Lido Technologies — Waleed Ayoub on technical leadership, AI, and building things that ship.">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Public+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -58,39 +60,52 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    max-width: 1040px;
+    max-width: 1160px;
     margin: 0 auto;
-    padding: 2.5rem 6vw 1.5rem;
-  }
-  .site-title {
+    padding: 2rem 6vw 0.5rem;
     font-family: 'Newsreader', serif;
     font-weight: 600;
-    font-size: 1.15rem;
+    font-size: 1.05rem;
   }
-  .nav-links { display: flex; gap: 1.4rem; font-size: 0.82rem; }
+  .nav-links { display: flex; gap: 1.4rem; font-size: 0.82rem; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.02em; font-weight: 400; }
   .nav-links a { color: var(--ink-soft); text-decoration: none; }
   .nav-links a:hover { color: var(--accent); }
 
   .layout {
-    max-width: 1040px;
+    max-width: 1160px;
     margin: 0 auto;
-    padding: 1rem 6vw 6rem;
+    padding: 2rem 6vw 6rem;
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 3rem;
   }
 
-  @media (min-width: 880px) {
+  @media (min-width: 980px) {
     .layout {
       display: grid;
-      grid-template-columns: 1fr 300px;
-      gap: 0 5rem;
+      grid-template-columns: 240px 1fr 280px;
+      gap: 0 3.5rem;
       align-items: start;
     }
-    .col-side {
+    .col1, .col3 {
       position: sticky;
       top: 2.5rem;
     }
+  }
+
+  .logo-mark {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin-bottom: 2rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .logo-mark {
+      filter: invert(1);
+    }
+  }
+  :root[data-theme="dark"] .logo-mark {
+    filter: invert(1);
   }
 
   .eyebrow {
@@ -118,10 +133,17 @@
     font-size: 1.2rem;
     margin: 0 0 1.1rem;
   }
+  h3 {
+    font-family: 'Newsreader', serif;
+    font-weight: 600;
+    font-size: 0.98rem;
+    color: var(--ink-soft);
+    margin: 0 0 1rem;
+  }
   section { margin: 2.8rem 0; }
-  .col-side section:first-child { margin-top: 0; }
+  .col1 section:first-of-type, .col2 section:first-of-type, .col3 section:first-of-type { margin-top: 0; }
   hr { border: none; border-top: 1px solid var(--line); margin: 2.8rem 0; }
-  .col-side hr { display: none; }
+  .col1 hr, .col3 hr { display: none; }
 
   p { margin: 0 0 0.9rem; }
   p:last-child { margin-bottom: 0; }
@@ -146,7 +168,7 @@
   .see-more a { text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
 
   footer {
-    max-width: 1040px;
+    max-width: 1160px;
     margin: 0 auto;
     padding: 0 6vw calc(3rem + env(safe-area-inset-bottom, 0px));
     color: var(--ink-soft);
@@ -157,15 +179,31 @@
 <body>
 
 <nav>
-  <a href="#" class="site-title plain">Lido Technologies</a>
-  <div class="nav-links mono">
-    <a href="#speaking">speaking</a>
-    <a href="#contact">contact</a>
+  <a href="#" class="plain">Lido Technologies</a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#what-i-do">What we do</a>
+    <a href="#projects">Projects</a>
   </div>
 </nav>
 
 <div class="layout">
-  <main class="col-main">
+  <div class="col1">
+    <img src="assets/logo.png" alt="Lido Technologies" class="logo-mark">
+
+    <section id="about">
+      <h2>About</h2>
+      <p>Lido Technologies is led by Waleed Ayoub, a technology executive with 20 years at the intersection of data, analytics, software development, and product &amp; technology leadership — from Shoppers Drug Mart and LoyaltyOne, through Rubikloud (CTO, acquired by Kinaxis) and Kinaxis itself, to Daybreak and iQmetrix today.</p>
+      <p>Waleed works directly with founders and leadership teams as a fractional CTO and advisor, with deep hands-on experience building software in enterprise B2B domains. He also writes occasionally at <a href="https://waleedayoub.com" target="_blank" rel="noopener">waleedayoub.com</a>.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Get in touch</h2>
+      <p>Email <a href="mailto:info@lidotech.co">info@lidotech.co</a>.</p>
+    </section>
+  </div>
+
+  <div class="col2">
     <p class="eyebrow mono">Technical leadership &amp; advisory</p>
     <h1>Twenty years building the systems that make data and AI actually work in production.</h1>
     <p class="tagline">Not advising from the sidelines — running the teams that ship it.</p>
@@ -183,33 +221,6 @@
         <li>Operating models and team-building for data, ML, and AI product organizations</li>
         <li>Advisory on product/AI strategy and build-vs-buy decisions</li>
       </ul>
-    </section>
-
-    <hr>
-
-    <section id="about">
-      <h2>About</h2>
-      <p>Lido Technologies is led by Waleed Ayoub, a technology executive with 20 years at the intersection of data, analytics, software development, and product &amp; technology leadership — from Shoppers Drug Mart and LoyaltyOne, through Rubikloud (CTO, acquired by Kinaxis) and Kinaxis itself, to Daybreak and iQmetrix today.</p>
-      <p>Waleed works directly with founders and leadership teams as a fractional CTO and advisor, with deep hands-on experience building software in enterprise B2B domains. He also writes occasionally at <a href="https://waleedayoub.com" target="_blank" rel="noopener">waleedayoub.com</a>.</p>
-    </section>
-  </main>
-
-  <aside class="col-side">
-    <section id="speaking">
-      <h2>Speaking &amp; evangelism</h2>
-      <div class="talk">
-        <div class="title">"Build vs. Buy: How the Easy Parts Got Easier and the Hard Parts Got Harder"</div>
-        <div class="venue mono">Daybreak AI Labor Summit — 2026</div>
-      </div>
-      <div class="talk">
-        <div class="title"><a href="https://www.mwcbarcelona.com/agenda/sessions/6105-the-telecom-retail-summit" target="_blank" rel="noopener">"From Omnichannel to Agentic Commerce"</a></div>
-        <div class="venue mono">Telecom Retail Summit, MWC Barcelona — 2026</div>
-      </div>
-      <div class="talk">
-        <div class="title"><a href="https://maven.com/p/e89cce/agents-in-the-wild-a-supply-chain-use-case" target="_blank" rel="noopener">"Agents in the Wild — A Supply Chain Use Case"</a></div>
-        <div class="venue mono">Aggregate Intellect, AI Agents Series — 2026</div>
-      </div>
-      <p class="see-more">Full speaking history at <a href="https://waleedayoub.com" target="_blank" rel="noopener">waleedayoub.com</a>.</p>
     </section>
 
     <hr>
@@ -233,14 +244,27 @@
         <div class="tag mono">Rotman School of Management, University of Toronto — since 2017</div>
       </div>
     </section>
+  </div>
 
-    <hr>
-
-    <section id="contact">
-      <h2>Get in touch</h2>
-      <p>Email <a href="mailto:info@lidotech.co">info@lidotech.co</a>.</p>
+  <div class="col3" id="projects">
+    <h2>Projects</h2>
+    <section id="speaking">
+      <h3>Speaking &amp; evangelism</h3>
+      <div class="talk">
+        <div class="title">"Build vs. Buy: How the Easy Parts Got Easier and the Hard Parts Got Harder"</div>
+        <div class="venue mono">Daybreak AI Labor Summit — 2026</div>
+      </div>
+      <div class="talk">
+        <div class="title"><a href="https://www.mwcbarcelona.com/agenda/sessions/6105-the-telecom-retail-summit" target="_blank" rel="noopener">"From Omnichannel to Agentic Commerce"</a></div>
+        <div class="venue mono">Telecom Retail Summit, MWC Barcelona — 2026</div>
+      </div>
+      <div class="talk">
+        <div class="title"><a href="https://maven.com/p/e89cce/agents-in-the-wild-a-supply-chain-use-case" target="_blank" rel="noopener">"Agents in the Wild — A Supply Chain Use Case"</a></div>
+        <div class="venue mono">Aggregate Intellect, AI Agents Series — 2026</div>
+      </div>
+      <p class="see-more">Full speaking history at <a href="https://waleedayoub.com" target="_blank" rel="noopener">waleedayoub.com</a>.</p>
     </section>
-  </aside>
+  </div>
 </div>
 
 <footer>
