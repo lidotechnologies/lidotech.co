@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lido Technologies</title>
+<meta name="description" content="Lido Technologies — Waleed Ayoub on technical leadership, AI, and building things that ship.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Public+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f6f2;
+    --ink: #1c2023;
+    --ink-soft: #5b6066;
+    --line: #ddd9d0;
+    --accent: #1f6f66;
+    --accent-soft: #3f8b80;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14181a;
+      --ink: #e7e5df;
+      --ink-soft: #9a9d99;
+      --line: #2b302f;
+      --accent: #6cc3b6;
+      --accent-soft: #4c8f86;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14181a;
+    --ink: #e7e5df;
+    --ink-soft: #9a9d99;
+    --line: #2b302f;
+    --accent: #6cc3b6;
+    --accent-soft: #4c8f86;
+  }
+
+  * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Public Sans', -apple-system, sans-serif;
+    line-height: 1.65;
+  }
+  a { color: var(--accent-soft); text-decoration: underline; text-underline-offset: 2px; }
+  a:hover { color: var(--accent); }
+  a.plain { color: inherit; text-decoration: none; }
+
+  .mono {
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.02em;
+  }
+
+  nav {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 2.5rem 6vw 1.5rem;
+  }
+  .site-title {
+    font-family: 'Newsreader', serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+  }
+  .nav-links { display: flex; gap: 1.4rem; font-size: 0.82rem; }
+  .nav-links a { color: var(--ink-soft); text-decoration: none; }
+  .nav-links a:hover { color: var(--accent); }
+
+  main { max-width: 640px; margin: 0 auto; padding: 1rem 6vw 6rem; }
+
+  .eyebrow {
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-soft);
+    margin: 0 0 1rem;
+  }
+
+  h1 {
+    font-family: 'Newsreader', serif;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.8rem;
+    text-wrap: balance;
+  }
+  .tagline { color: var(--ink-soft); margin: 0 0 3rem; font-size: 1.05rem; max-width: 34ch; }
+
+  h2 {
+    font-family: 'Newsreader', serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0 0 1.1rem;
+  }
+  section { margin: 2.8rem 0; }
+  hr { border: none; border-top: 1px solid var(--line); margin: 2.8rem 0; }
+
+  p { margin: 0 0 0.9rem; }
+  p:last-child { margin-bottom: 0; }
+
+  ul { margin: 0; padding-left: 1.2rem; }
+  li { margin-bottom: 0.6rem; }
+  li:last-child { margin-bottom: 0; }
+
+  .engagement { margin-bottom: 1.3rem; }
+  .engagement:last-child { margin-bottom: 0; }
+  .engagement .role { font-weight: 500; }
+  .engagement .tag { color: var(--ink-soft); font-size: 0.85rem; }
+
+  .talk { margin-bottom: 1.2rem; }
+  .talk:last-child { margin-bottom: 0; }
+  .talk .title { font-weight: 500; }
+  .talk .venue { color: var(--ink-soft); font-size: 0.82rem; }
+  .see-more {
+    margin-top: 1.6rem;
+    font-size: 0.9rem;
+  }
+  .see-more a { text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
+
+  footer {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 6vw calc(3rem + env(safe-area-inset-bottom, 0px));
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="site-title plain">Lido Technologies</a>
+  <div class="nav-links mono">
+    <a href="#speaking">speaking</a>
+    <a href="#contact">contact</a>
+  </div>
+</nav>
+
+<main>
+  <p class="eyebrow mono">Technical leadership &amp; advisory</p>
+  <h1>Twenty years building the systems that make data and AI actually work in production.</h1>
+  <p class="tagline">Not advising from the sidelines — running the teams that ship it.</p>
+
+  <section>
+    <p>I've spent two decades inside that gap — running product and engineering teams that turn machine learning and AI into things customers actually use, not just what demos well.</p>
+  </section>
+
+  <hr>
+
+  <section id="what-i-do">
+    <h2>What I do</h2>
+    <ul>
+      <li>Fractional CTO and technical leadership for founders and leadership teams scaling past ad hoc engineering</li>
+      <li>Operating models and team-building for data, ML, and AI product organizations</li>
+      <li>Advisory on product/AI strategy and build-vs-buy decisions</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <section id="speaking">
+    <h2>Speaking &amp; evangelism</h2>
+    <div class="talk">
+      <div class="title">"Build vs. Buy: How the Easy Parts Got Easier and the Hard Parts Got Harder"</div>
+      <div class="venue mono">Daybreak AI Labor Summit — 2026</div>
+    </div>
+    <div class="talk">
+      <div class="title">Telecom Retail Summit</div>
+      <div class="venue mono">MWC Barcelona — 2026</div>
+    </div>
+    <div class="talk">
+      <div class="title"><a href="https://maven.com/p/e89cce/agents-in-the-wild-a-supply-chain-use-case" target="_blank" rel="noopener">"Agents in the Wild — A Supply Chain Use Case"</a></div>
+      <div class="venue mono">Aggregate Intellect, AI Agents Series — 2026</div>
+    </div>
+    <p class="see-more">Full speaking history at <a href="https://waleedayoub.com" target="_blank" rel="noopener">waleedayoub.com</a>.</p>
+  </section>
+
+  <hr>
+
+  <section id="engagements">
+    <h2>Recent engagements</h2>
+    <div class="engagement">
+      <div class="role">Chief Technology Officer, Daybreak</div>
+      <div class="tag mono">AI-native supply chain planning, venture-backed</div>
+    </div>
+    <div class="engagement">
+      <div class="role">Strategic Advisor, iQmetrix</div>
+      <div class="tag mono">Product &amp; AI strategy, telecom retail</div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>Lido Technologies is led by Waleed Ayoub, a technology executive with 20 years at the intersection of data, analytics, software development, and product &amp; technology leadership — from Shoppers Drug Mart and LoyaltyOne, through Rubikloud (CTO, acquired by Kinaxis) and Kinaxis itself, to Daybreak and iQmetrix today.</p>
+    <p>Waleed works directly with founders and leadership teams as a fractional CTO and advisor, with deep hands-on experience building software in enterprise B2B domains. He also writes occasionally at <a href="https://waleedayoub.com" target="_blank" rel="noopener">waleedayoub.com</a>.</p>
+  </section>
+
+  <hr>
+
+  <section id="contact">
+    <h2>Get in touch</h2>
+    <p>Email <a href="mailto:waleed.ayoub@gmail.com">waleed.ayoub@gmail.com</a>.</p>
+  </section>
+</main>
+
+<footer>
+  Lido Technologies Inc. · Ontario, Canada · <a href="https://waleedayoub.com">waleedayoub.com</a>
+</footer>
+
+</body>
+</html>
