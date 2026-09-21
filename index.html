@@ -58,7 +58,7 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    max-width: 640px;
+    max-width: 1040px;
     margin: 0 auto;
     padding: 2.5rem 6vw 1.5rem;
   }
@@ -71,7 +71,27 @@
   .nav-links a { color: var(--ink-soft); text-decoration: none; }
   .nav-links a:hover { color: var(--accent); }
 
-  main { max-width: 640px; margin: 0 auto; padding: 1rem 6vw 6rem; }
+  .layout {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 1rem 6vw 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  @media (min-width: 880px) {
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 0 5rem;
+      align-items: start;
+    }
+    .col-side {
+      position: sticky;
+      top: 2.5rem;
+    }
+  }
 
   .eyebrow {
     font-size: 0.76rem;
@@ -99,7 +119,9 @@
     margin: 0 0 1.1rem;
   }
   section { margin: 2.8rem 0; }
+  .col-side section:first-child { margin-top: 0; }
   hr { border: none; border-top: 1px solid var(--line); margin: 2.8rem 0; }
+  .col-side hr { display: none; }
 
   p { margin: 0 0 0.9rem; }
   p:last-child { margin-bottom: 0; }
@@ -115,7 +137,7 @@
 
   .talk { margin-bottom: 1.2rem; }
   .talk:last-child { margin-bottom: 0; }
-  .talk .title { font-weight: 500; }
+  .talk .title { font-weight: 500; font-size: 0.95rem; }
   .talk .venue { color: var(--ink-soft); font-size: 0.82rem; }
   .see-more {
     margin-top: 1.6rem;
@@ -124,7 +146,7 @@
   .see-more a { text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
 
   footer {
-    max-width: 640px;
+    max-width: 1040px;
     margin: 0 auto;
     padding: 0 6vw calc(3rem + env(safe-area-inset-bottom, 0px));
     color: var(--ink-soft);
@@ -142,77 +164,87 @@
   </div>
 </nav>
 
-<main>
-  <p class="eyebrow mono">Technical leadership &amp; advisory</p>
-  <h1>Twenty years building the systems that make data and AI actually work in production.</h1>
-  <p class="tagline">Not advising from the sidelines — running the teams that ship it.</p>
+<div class="layout">
+  <main class="col-main">
+    <p class="eyebrow mono">Technical leadership &amp; advisory</p>
+    <h1>Twenty years building the systems that make data and AI actually work in production.</h1>
+    <p class="tagline">Not advising from the sidelines — running the teams that ship it.</p>
 
-  <section>
-    <p>I've spent two decades inside that gap — running product and engineering teams that turn machine learning and AI into things customers actually use, not just what demos well.</p>
-  </section>
+    <section>
+      <p>I've spent two decades inside that gap — running product and engineering teams that turn machine learning and AI into things customers actually use, not just what demos well.</p>
+    </section>
 
-  <hr>
+    <hr>
 
-  <section id="what-i-do">
-    <h2>What I do</h2>
-    <ul>
-      <li>Fractional CTO and technical leadership for founders and leadership teams scaling past ad hoc engineering</li>
-      <li>Operating models and team-building for data, ML, and AI product organizations</li>
-      <li>Advisory on product/AI strategy and build-vs-buy decisions</li>
-    </ul>
-  </section>
+    <section id="what-i-do">
+      <h2>What I do</h2>
+      <ul>
+        <li>Fractional CTO and technical leadership for founders and leadership teams scaling past ad hoc engineering</li>
+        <li>Operating models and team-building for data, ML, and AI product organizations</li>
+        <li>Advisory on product/AI strategy and build-vs-buy decisions</li>
+      </ul>
+    </section>
 
-  <hr>
+    <hr>
 
-  <section id="speaking">
-    <h2>Speaking &amp; evangelism</h2>
-    <div class="talk">
-      <div class="title">"Build vs. Buy: How the Easy Parts Got Easier and the Hard Parts Got Harder"</div>
-      <div class="venue mono">Daybreak AI Labor Summit — 2026</div>
-    </div>
-    <div class="talk">
-      <div class="title">Telecom Retail Summit</div>
-      <div class="venue mono">MWC Barcelona — 2026</div>
-    </div>
-    <div class="talk">
-      <div class="title"><a href="https://maven.com/p/e89cce/agents-in-the-wild-a-supply-chain-use-case" target="_blank" rel="noopener">"Agents in the Wild — A Supply Chain Use Case"</a></div>
-      <div class="venue mono">Aggregate Intellect, AI Agents Series — 2026</div>
-    </div>
-    <p class="see-more">Full speaking history at <a href="https://waleedayoub.com" target="_blank" rel="noopener">waleedayoub.com</a>.</p>
-  </section>
+    <section id="about">
+      <h2>About</h2>
+      <p>Lido Technologies is led by Waleed Ayoub, a technology executive with 20 years at the intersection of data, analytics, software development, and product &amp; technology leadership — from Shoppers Drug Mart and LoyaltyOne, through Rubikloud (CTO, acquired by Kinaxis) and Kinaxis itself, to Daybreak and iQmetrix today.</p>
+      <p>Waleed works directly with founders and leadership teams as a fractional CTO and advisor, with deep hands-on experience building software in enterprise B2B domains. He also writes occasionally at <a href="https://waleedayoub.com" target="_blank" rel="noopener">waleedayoub.com</a>.</p>
+    </section>
+  </main>
 
-  <hr>
+  <aside class="col-side">
+    <section id="speaking">
+      <h2>Speaking &amp; evangelism</h2>
+      <div class="talk">
+        <div class="title">"Build vs. Buy: How the Easy Parts Got Easier and the Hard Parts Got Harder"</div>
+        <div class="venue mono">Daybreak AI Labor Summit — 2026</div>
+      </div>
+      <div class="talk">
+        <div class="title"><a href="https://www.mwcbarcelona.com/agenda/sessions/6105-the-telecom-retail-summit" target="_blank" rel="noopener">"From Omnichannel to Agentic Commerce"</a></div>
+        <div class="venue mono">Telecom Retail Summit, MWC Barcelona — 2026</div>
+      </div>
+      <div class="talk">
+        <div class="title"><a href="https://maven.com/p/e89cce/agents-in-the-wild-a-supply-chain-use-case" target="_blank" rel="noopener">"Agents in the Wild — A Supply Chain Use Case"</a></div>
+        <div class="venue mono">Aggregate Intellect, AI Agents Series — 2026</div>
+      </div>
+      <p class="see-more">Full speaking history at <a href="https://waleedayoub.com" target="_blank" rel="noopener">waleedayoub.com</a>.</p>
+    </section>
 
-  <section id="engagements">
-    <h2>Recent engagements</h2>
-    <div class="engagement">
-      <div class="role">Chief Technology Officer, Daybreak</div>
-      <div class="tag mono">AI-native supply chain planning, venture-backed</div>
-    </div>
-    <div class="engagement">
-      <div class="role">Strategic Advisor, iQmetrix</div>
-      <div class="tag mono">Product &amp; AI strategy, telecom retail</div>
-    </div>
-  </section>
+    <hr>
 
-  <hr>
+    <section id="engagements">
+      <h2>Current engagements</h2>
+      <div class="engagement">
+        <div class="role">Chief Technology Officer, Daybreak</div>
+        <div class="tag mono">AI-native supply chain planning, venture-backed</div>
+      </div>
+      <div class="engagement">
+        <div class="role">Strategic Advisor, iQmetrix</div>
+        <div class="tag mono">Product &amp; AI strategy, telecom retail</div>
+      </div>
+      <div class="engagement">
+        <div class="role">Advisory Board Member, Master of Business Analytics</div>
+        <div class="tag mono">Schulich School of Business, York University — since 2016</div>
+      </div>
+      <div class="engagement">
+        <div class="role">Advisory Board Member, Master of Management Analytics</div>
+        <div class="tag mono">Rotman School of Management, University of Toronto — since 2017</div>
+      </div>
+    </section>
 
-  <section id="about">
-    <h2>About</h2>
-    <p>Lido Technologies is led by Waleed Ayoub, a technology executive with 20 years at the intersection of data, analytics, software development, and product &amp; technology leadership — from Shoppers Drug Mart and LoyaltyOne, through Rubikloud (CTO, acquired by Kinaxis) and Kinaxis itself, to Daybreak and iQmetrix today.</p>
-    <p>Waleed works directly with founders and leadership teams as a fractional CTO and advisor, with deep hands-on experience building software in enterprise B2B domains. He also writes occasionally at <a href="https://waleedayoub.com" target="_blank" rel="noopener">waleedayoub.com</a>.</p>
-  </section>
+    <hr>
 
-  <hr>
-
-  <section id="contact">
-    <h2>Get in touch</h2>
-    <p>Email <a href="mailto:waleed.ayoub@gmail.com">waleed.ayoub@gmail.com</a>.</p>
-  </section>
-</main>
+    <section id="contact">
+      <h2>Get in touch</h2>
+      <p>Email <a href="mailto:info@lidotech.co">info@lidotech.co</a>.</p>
+    </section>
+  </aside>
+</div>
 
 <footer>
-  Lido Technologies Inc. · Ontario, Canada · <a href="https://waleedayoub.com">waleedayoub.com</a>
+  Lido Technologies Inc. · <a href="https://waleedayoub.com">waleedayoub.com</a>
 </footer>
 
 </body>
